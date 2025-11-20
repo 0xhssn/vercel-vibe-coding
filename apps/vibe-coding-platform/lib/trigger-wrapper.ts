@@ -1,44 +1,37 @@
 /**
- * High-level wrapper functions for Trigger.dev + e2b sandbox operations.
+ * High-level wrapper functions for Trigger.dev + E2B sandbox operations.
  *
- * These functions provide a clean API for the AI tools to interact with sandboxes
- * via Trigger.dev v3 tasks.
- *
- * In development, tasks run locally. In production, they run via Trigger.dev.
+ * These functions provide a clean API for the AI tools to interact with sandboxes.
+ * In development, operations run locally via SandboxManager.
+ * In production, they run via Trigger.dev tasks.
  */
 
 import { tasks } from '@trigger.dev/sdk/v3'
-import type {
-  SandboxConfig,
-  SandboxInfo,
-  CommandConfig,
-  CommandResult,
-  FileUpload,
-} from './e2b-types'
-
-// For local development, import task handlers directly
 import {
-  createSandboxHandler,
-  runCommandHandler,
-  uploadFilesHandler,
-  getPreviewURLHandler,
-  readFileHandler,
-  stopSandboxHandler,
-} from '@/trigger/handlers'
+  sandboxManager,
+  type SandboxConfig,
+  type SandboxInfo,
+  type CommandConfig,
+  type CommandResult,
+  type FileUpload,
+  type UploadResult,
+  type PreviewURLResult,
+  type FileReadResult,
+  type OperationResult,
+} from '@/trigger'
 
 const isDev =
   process.env.NODE_ENV === 'development' || !process.env.TRIGGER_SECRET_KEY
 
 /**
- * Create a new sandbox via Trigger.dev task
+ * Create a new sandbox
  */
 export async function createSandbox(
   config: SandboxConfig
 ): Promise<SandboxInfo> {
   try {
-    // In development, run task handler directly for faster feedback
     if (isDev) {
-      return await createSandboxHandler(config)
+      return await sandboxManager.create(config)
     }
 
     const handle = await tasks.trigger('create-sandbox', config)
@@ -62,7 +55,7 @@ export async function runCommand(
 ): Promise<CommandResult> {
   try {
     if (isDev) {
-      return await runCommandHandler({ sandboxId, command })
+      return await sandboxManager.runCommand(sandboxId, command)
     }
 
     const handle = await tasks.trigger('run-command', { sandboxId, command })
@@ -83,18 +76,14 @@ export async function runCommand(
 export async function uploadFiles(
   sandboxId: string,
   files: FileUpload[]
-): Promise<{ success: boolean; uploaded?: string[]; error?: string }> {
+): Promise<UploadResult> {
   try {
     if (isDev) {
-      return await uploadFilesHandler({ sandboxId, files })
+      return await sandboxManager.uploadFiles(sandboxId, files)
     }
 
     const handle = await tasks.trigger('upload-files', { sandboxId, files })
-    return handle as unknown as {
-      success: boolean
-      uploaded?: string[]
-      error?: string
-    }
+    return handle as unknown as UploadResult
   } catch (error) {
     console.error('Failed to upload files:', error)
     return {
@@ -110,18 +99,14 @@ export async function uploadFiles(
 export async function getPreviewURL(
   sandboxId: string,
   port: number
-): Promise<{ success: boolean; url?: string; error?: string }> {
+): Promise<PreviewURLResult> {
   try {
     if (isDev) {
-      return await getPreviewURLHandler({ sandboxId, port })
+      return await sandboxManager.getPreviewURL(sandboxId, port)
     }
 
     const handle = await tasks.trigger('get-preview-url', { sandboxId, port })
-    return handle as unknown as {
-      success: boolean
-      url?: string
-      error?: string
-    }
+    return handle as unknown as PreviewURLResult
   } catch (error) {
     console.error('Failed to get preview URL:', error)
     return {
@@ -137,18 +122,14 @@ export async function getPreviewURL(
 export async function readFile(
   sandboxId: string,
   path: string
-): Promise<{ success: boolean; content?: string; error?: string }> {
+): Promise<FileReadResult> {
   try {
     if (isDev) {
-      return await readFileHandler({ sandboxId, path })
+      return await sandboxManager.readFile(sandboxId, path)
     }
 
     const handle = await tasks.trigger('read-file', { sandboxId, path })
-    return handle as unknown as {
-      success: boolean
-      content?: string
-      error?: string
-    }
+    return handle as unknown as FileReadResult
   } catch (error) {
     console.error('Failed to read file:', error)
     return {
@@ -161,16 +142,14 @@ export async function readFile(
 /**
  * Stop a sandbox
  */
-export async function stopSandbox(
-  sandboxId: string
-): Promise<{ success: boolean; error?: string }> {
+export async function stopSandbox(sandboxId: string): Promise<OperationResult> {
   try {
     if (isDev) {
-      return await stopSandboxHandler({ sandboxId })
+      return await sandboxManager.stop(sandboxId)
     }
 
     const handle = await tasks.trigger('stop-sandbox', { sandboxId })
-    return handle as unknown as { success: boolean; error?: string }
+    return handle as unknown as OperationResult
   } catch (error) {
     console.error('Failed to stop sandbox:', error)
     return {
