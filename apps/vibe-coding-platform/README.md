@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vibe Coding Platform
+
+AI-powered coding assistant with cloud sandboxes for running and previewing code.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- pnpm
+- E2B API key
+
+### Environment Variables
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Required
+E2B_API_KEY=your_e2b_api_key
+
+# Optional (for production with Trigger.dev)
+TRIGGER_SECRET_KEY=your_trigger_secret_key
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Architecture
 
-To learn more about Next.js, take a look at the following resources:
+### Sandbox Execution
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The platform uses **E2B** for cloud sandboxes and **Trigger.dev** for task orchestration.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+lib/e2b/           # E2B module - Low-level sandbox operations
+├── types.ts       # E2B types and timeout constants
+├── logger.ts      # Consistent logging
+├── client.ts      # E2BClient class (connection pooling)
+├── commands.ts    # Command utilities (pnpm, timeouts)
+├── files.ts       # File operations
+└── index.ts       # Exports
 
-## Deploy on Vercel
+trigger/           # Trigger.dev module - Task orchestration
+├── types.ts       # High-level types (SandboxConfig, CommandResult, etc.)
+├── sandbox-manager.ts  # SandboxManager class (main API)
+├── tasks.ts       # Trigger.dev task definitions
+├── client.ts      # Config helpers
+└── index.ts       # Exports
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+lib/trigger-wrapper.ts  # Public API for AI tools
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Key Design Decisions
+
+1. **Singleton Pattern**: `E2BClient` and `SandboxManager` use singletons for connection pooling and state management.
+
+2. **Development vs Production**:
+
+   - Dev: Operations run directly via `SandboxManager`
+   - Prod: Operations run via Trigger.dev tasks
+
+3. **Automatic pnpm Installation**: The system auto-installs pnpm when needed.
+
+4. **Timeout Configuration**:
+
+   - Dev servers: 5 minutes
+   - Install commands: 5 minutes
+   - Default commands: 2 minutes
+   - Sandbox lifetime: 10 minutes
+
+5. **Health Checks**: Stale sandbox references are detected and reconnected automatically.
+
+### AI Tools
+
+Located in `ai/tools/`:
+
+- `create-sandbox.ts` - Create new sandbox
+- `run-command.ts` - Execute commands
+- `generate-files.ts` - Generate and upload files
+- `get-sandbox-url.ts` - Get preview URLs
+
+## Project Structure
+
+```
+app/               # Next.js App Router
+├── api/chat/      # AI chat endpoint
+├── page.tsx       # Main page
+
+components/        # React components
+├── chat/          # Chat UI
+├── commands-logs/ # Sandbox output display
+├── preview/       # Preview iframe
+
+ai/                # AI configuration
+├── tools/         # Tool definitions
+├── messages/      # Message types
+└── gateway.ts     # Model configuration
+```
+
+## Deployment
+
+The app can be deployed to Vercel. For production, configure:
+
+- Trigger.dev project and secret key
+- E2B API key in environment variables
