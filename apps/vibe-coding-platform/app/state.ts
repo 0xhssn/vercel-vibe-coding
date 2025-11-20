@@ -149,7 +149,11 @@ export function useDataStateMapper() {
           addGeneratedFiles(data.data.paths)
         }
         if (data.data.status === 'error' && data.data.error) {
-          toast.error(`Failed to generate files: ${data.data.error}`)
+          const errorMsg =
+            typeof data.data.error === 'string'
+              ? data.data.error
+              : data.data.error.message
+          toast.error(`Failed to generate files: ${errorMsg}`)
         }
         break
       case 'data-run-command':
@@ -166,7 +170,11 @@ export function useDataStateMapper() {
           })
         }
         if (data.data.status === 'error' && data.data.error) {
-          toast.error(`Command failed: ${data.data.error}`)
+          const errorMsg =
+            typeof data.data.error === 'string'
+              ? data.data.error
+              : data.data.error.message
+          toast.error(`Command failed: ${errorMsg}`)
         }
         break
       case 'data-get-sandbox-url':
