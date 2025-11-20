@@ -31,18 +31,34 @@ export const getSandboxURL = ({ writer }: Params) =>
         data: { status: 'loading' },
       })
 
-      const result = await getPreviewURL(sandboxId, port)
+      try {
+        const result = await getPreviewURL(sandboxId, port)
 
-      if (!result.success) {
-        throw new Error(result.error || 'Failed to get preview URL')
+        if (!result.success) {
+          const errorMsg = result.error || 'Failed to get preview URL'
+          writer.write({
+            id: toolCallId,
+            type: 'data-get-sandbox-url',
+            data: { status: 'error', error: errorMsg },
+          })
+          return { error: errorMsg }
+        }
+
+        writer.write({
+          id: toolCallId,
+          type: 'data-get-sandbox-url',
+          data: { url: result.url, status: 'done' },
+        })
+
+        return { url: result.url }
+      } catch (error) {
+        const errorMsg = error instanceof Error ? error.message : String(error)
+        writer.write({
+          id: toolCallId,
+          type: 'data-get-sandbox-url',
+          data: { status: 'error', error: errorMsg },
+        })
+        return { error: errorMsg }
       }
-
-      writer.write({
-        id: toolCallId,
-        type: 'data-get-sandbox-url',
-        data: { url: result.url, status: 'done' },
-      })
-
-      return { url: result.url }
     },
   })

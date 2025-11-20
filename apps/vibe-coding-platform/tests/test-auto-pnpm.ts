@@ -7,7 +7,7 @@ import {
   runCommand,
   uploadFiles,
   stopSandbox,
-} from './lib/trigger-wrapper'
+} from '../lib/trigger-wrapper'
 
 async function testAutoPnpm() {
   console.log('🧪 Testing automatic pnpm handling...\n')

@@ -4,6 +4,7 @@ import type { ChatStatus, DataUIPart } from 'ai'
 import { useMonitorState } from '@/components/error-monitor/state'
 import { useMemo } from 'react'
 import { create } from 'zustand'
+import { toast } from 'sonner'
 
 interface SandboxStore {
   addGeneratedFiles: (files: string[]) => void
@@ -137,12 +138,18 @@ export function useDataStateMapper() {
         if (data.data.sandboxId) {
           setSandboxId(data.data.sandboxId)
         }
+        if (data.data.status === 'error' && data.data.error) {
+          toast.error(`Failed to create sandbox: ${data.data.error.message}`)
+        }
         break
       case 'data-generating-files':
         if (data.data.status === 'uploaded') {
           setCursor(errors.length)
           addPaths(data.data.paths)
           addGeneratedFiles(data.data.paths)
+        }
+        if (data.data.status === 'error' && data.data.error) {
+          toast.error(`Failed to generate files: ${data.data.error}`)
         }
         break
       case 'data-run-command':
@@ -158,10 +165,16 @@ export function useDataStateMapper() {
             args: data.data.args,
           })
         }
+        if (data.data.status === 'error' && data.data.error) {
+          toast.error(`Command failed: ${data.data.error}`)
+        }
         break
       case 'data-get-sandbox-url':
         if (data.data.url) {
           setUrl(data.data.url, crypto.randomUUID())
+        }
+        if (data.data.status === 'error' && data.data.error) {
+          toast.error(`Failed to get preview URL: ${data.data.error}`)
         }
         break
       default:
