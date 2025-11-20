@@ -41,14 +41,48 @@ export function CommandsLogs(props: Props) {
               )
 
               const line = `${command.command} ${command.args.join(' ')}`
-              const body = command.logs?.map((log) => log.data).join('') || ''
+              const isRunning = command.exitCode === undefined
+              const isSuccess = command.exitCode === 0
+              const statusColor = isRunning
+                ? 'text-yellow-500'
+                : isSuccess
+                ? 'text-green-500'
+                : 'text-red-500'
+              const statusText = isRunning
+                ? '⏳ running'
+                : isSuccess
+                ? '✓ exit 0'
+                : `✗ exit ${command.exitCode}`
+
               return (
-                <pre
+                <div
                   key={command.cmdId}
-                  className="whitespace-pre-wrap font-mono text-sm"
+                  className="border-b border-border/50 pb-2 last:border-0"
                 >
-                  {`[${date}] ${line}\n${body}`}
-                </pre>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-muted-foreground text-xs">
+                      {date}
+                    </span>
+                    <span className={`text-xs ${statusColor}`}>
+                      {statusText}
+                    </span>
+                  </div>
+                  <pre className="whitespace-pre-wrap font-mono text-sm text-blue-400 mb-1">
+                    $ {line}
+                  </pre>
+                  {command.logs?.map((log, i) => (
+                    <pre
+                      key={i}
+                      className={`whitespace-pre-wrap font-mono text-xs ${
+                        log.stream === 'stderr'
+                          ? 'text-red-400'
+                          : 'text-foreground/80'
+                      }`}
+                    >
+                      {log.data}
+                    </pre>
+                  ))}
+                </div>
               )
             })}
           </div>
