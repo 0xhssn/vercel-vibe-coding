@@ -1,0 +1,326 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message Component renders assistant message with correct styling 1`] = `
+<div>
+  <div
+    class="mr-20"
+  >
+    <div
+      class="flex items-center gap-2 text-sm font-medium font-mono text-primary mb-1.5"
+    >
+      <div
+        data-testid="bot-icon"
+      >
+        BotIcon
+      </div>
+      <span>
+        Assistant (
+        gpt-4
+        )
+      </span>
+    </div>
+    <div
+      class="space-y-1.5"
+    >
+      <div
+        class="text-sm px-3.5 py-3 border bg-secondary/90 text-secondary-foreground border-gray-300 rounded-md font-mono"
+      >
+        <div
+          data-testid="markdown-renderer"
+        >
+          Assistant response
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message Component renders assistant message with model metadata 1`] = `
+<div>
+  <div
+    class="mr-20"
+  >
+    <div
+      class="flex items-center gap-2 text-sm font-medium font-mono text-primary mb-1.5"
+    >
+      <div
+        data-testid="bot-icon"
+      >
+        BotIcon
+      </div>
+      <span>
+        Assistant (
+        gpt-4
+        )
+      </span>
+    </div>
+    <div
+      class="space-y-1.5"
+    >
+      <div
+        class="text-sm px-3.5 py-3 border bg-secondary/90 text-secondary-foreground border-gray-300 rounded-md font-mono"
+      >
+        <div
+          data-testid="markdown-renderer"
+        >
+          Hi there!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message Component renders message with empty reasoning part 1`] = `
+<div>
+  <div
+    class="mr-20"
+  >
+    <div
+      class="flex items-center gap-2 text-sm font-medium font-mono text-primary mb-1.5"
+    >
+      <div
+        data-testid="bot-icon"
+      >
+        BotIcon
+      </div>
+      <span>
+        Assistant (
+        gpt-4
+        )
+      </span>
+    </div>
+    <div
+      class="space-y-1.5"
+    >
+      <div
+        class="text-sm px-3.5 py-3 border bg-secondary/90 text-secondary-foreground border-gray-300 rounded-md font-mono"
+      >
+        <div
+          data-testid="markdown-renderer"
+        >
+          Result
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message Component renders message with multiple text parts 1`] = `
+<div>
+  <div
+    class="mr-20"
+  >
+    <div
+      class="flex items-center gap-2 text-sm font-medium font-mono text-primary mb-1.5"
+    >
+      <div
+        data-testid="bot-icon"
+      >
+        BotIcon
+      </div>
+      <span>
+        Assistant (
+        gpt-4
+        )
+      </span>
+    </div>
+    <div
+      class="space-y-1.5"
+    >
+      <div
+        class="text-sm px-3.5 py-3 border bg-secondary/90 text-secondary-foreground border-gray-300 rounded-md font-mono"
+      >
+        <div
+          data-testid="markdown-renderer"
+        >
+          Part 1
+        </div>
+      </div>
+      <div
+        class="text-sm px-3.5 py-3 border bg-secondary/90 text-secondary-foreground border-gray-300 rounded-md font-mono"
+      >
+        <div
+          data-testid="markdown-renderer"
+        >
+          Part 2
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message Component renders message with reasoning part 1`] = `
+<div>
+  <div
+    class="mr-20"
+  >
+    <div
+      class="flex items-center gap-2 text-sm font-medium font-mono text-primary mb-1.5"
+    >
+      <div
+        data-testid="bot-icon"
+      >
+        BotIcon
+      </div>
+      <span>
+        Assistant (
+        gpt-4
+        )
+      </span>
+    </div>
+    <div
+      class="space-y-1.5"
+    >
+      <div
+        class="text-sm border border-border bg-background rounded-md cursor-pointer hover:bg-accent/30 transition-colors"
+      >
+        <div
+          class="px-3 py-2"
+        >
+          <div
+            class="text-secondary-foreground font-mono leading-normal"
+          >
+            <div
+              data-testid="markdown-renderer"
+            >
+              Let me think about this step by step
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="text-sm px-3.5 py-3 border bg-secondary/90 text-secondary-foreground border-gray-300 rounded-md font-mono"
+      >
+        <div
+          data-testid="markdown-renderer"
+        >
+          Result
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message Component renders message with streaming reasoning part 1`] = `
+<div>
+  <div
+    class="mr-20"
+  >
+    <div
+      class="flex items-center gap-2 text-sm font-medium font-mono text-primary mb-1.5"
+    >
+      <div
+        data-testid="bot-icon"
+      >
+        BotIcon
+      </div>
+      <span>
+        Assistant (
+        gpt-4
+        )
+      </span>
+    </div>
+    <div
+      class="space-y-1.5"
+    >
+      <div
+        class="text-sm border border-border bg-background rounded-md cursor-pointer hover:bg-accent/30 transition-colors"
+      >
+        <div
+          class="px-3 py-2"
+        >
+          <div
+            class="text-secondary-foreground font-mono leading-normal"
+          >
+            <div
+              data-testid="markdown-renderer"
+            >
+              Processing...
+            </div>
+            <div
+              class="opacity-60"
+              data-size="5"
+              data-testid="pulse-loader"
+            >
+              PulseLoader
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message Component renders user message correctly 1`] = `
+<div>
+  <div
+    class="ml-20"
+  >
+    <div
+      class="flex items-center gap-2 text-sm font-medium font-mono text-primary mb-1.5"
+    >
+      <div
+        data-testid="user-icon"
+      >
+        UserIcon
+      </div>
+      <span>
+        You
+      </span>
+    </div>
+    <div
+      class="space-y-1.5"
+    >
+      <div
+        class="text-sm px-3.5 py-3 border bg-secondary/90 text-secondary-foreground border-gray-300 rounded-md font-mono"
+      >
+        <div
+          data-testid="markdown-renderer"
+        >
+          Hello, assistant!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message Component renders user message with correct styling 1`] = `
+<div>
+  <div
+    class="ml-20"
+  >
+    <div
+      class="flex items-center gap-2 text-sm font-medium font-mono text-primary mb-1.5"
+    >
+      <div
+        data-testid="user-icon"
+      >
+        UserIcon
+      </div>
+      <span>
+        You
+      </span>
+    </div>
+    <div
+      class="space-y-1.5"
+    >
+      <div
+        class="text-sm px-3.5 py-3 border bg-secondary/90 text-secondary-foreground border-gray-300 rounded-md font-mono"
+      >
+        <div
+          data-testid="markdown-renderer"
+        >
+          User query
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

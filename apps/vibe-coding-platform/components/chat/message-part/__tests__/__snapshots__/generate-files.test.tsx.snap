@@ -1,0 +1,552 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GenerateFiles Message Part Component renders with custom className 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono custom-class"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="cloud-upload-icon"
+      >
+        CloudUploadIcon
+      </div>
+      <span>
+        Uploaded files
+      </span>
+    </div>
+    <div
+      class="text-sm relative min-h-5"
+    >
+      <div
+        class="flex items-center"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+        <span
+          class="whitespace-pre-wrap"
+        >
+          src/index.ts
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`GenerateFiles Message Part Component renders with deeply nested file paths 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="cloud-upload-icon"
+      >
+        CloudUploadIcon
+      </div>
+      <span>
+        Uploaded files
+      </span>
+    </div>
+    <div
+      class="text-sm relative min-h-5"
+    >
+      <div
+        class="flex items-center"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+        <span
+          class="whitespace-pre-wrap"
+        >
+          src/components/ui/button.tsx
+        </span>
+      </div>
+      <div
+        class="flex items-center"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+        <span
+          class="whitespace-pre-wrap"
+        >
+          src/components/ui/input.tsx
+        </span>
+      </div>
+      <div
+        class="flex items-center"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+        <span
+          class="whitespace-pre-wrap"
+        >
+          src/lib/utils.ts
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`GenerateFiles Message Part Component renders with done status 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="cloud-upload-icon"
+      >
+        CloudUploadIcon
+      </div>
+      <span>
+        Uploaded files
+      </span>
+    </div>
+    <div
+      class="text-sm relative min-h-5"
+    >
+      <div
+        class="flex items-center"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+        <span
+          class="whitespace-pre-wrap"
+        >
+          src/index.ts
+        </span>
+      </div>
+      <div
+        class="flex items-center"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+        <span
+          class="whitespace-pre-wrap"
+        >
+          src/utils.ts
+        </span>
+      </div>
+      <div
+        class="flex items-center"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+        <span
+          class="whitespace-pre-wrap"
+        >
+          src/types.ts
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`GenerateFiles Message Part Component renders with error status 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="cloud-upload-icon"
+      >
+        CloudUploadIcon
+      </div>
+      <span>
+        Generating files
+      </span>
+    </div>
+    <div
+      class="text-sm relative min-h-5"
+    >
+      <div
+        class="flex items-center"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+        <span
+          class="whitespace-pre-wrap"
+        >
+          src/index.ts
+        </span>
+      </div>
+      <div
+        class="flex"
+      >
+        <span
+          class="inline-flex items-center justify-center w-5 h-5 mr-1"
+        >
+          <div
+            data-testid="x-icon"
+          >
+            XIcon
+          </div>
+        </span>
+        <span>
+          src/utils.ts
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`GenerateFiles Message Part Component renders with generating status and single file 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="cloud-upload-icon"
+      >
+        CloudUploadIcon
+      </div>
+      <span>
+        Generating files
+      </span>
+    </div>
+    <div
+      class="text-sm relative min-h-5"
+    >
+      <div
+        class="flex"
+      >
+        <span
+          class="inline-flex items-center justify-center w-5 h-5 mr-1"
+        >
+          <div
+            data-testid="ai-loader"
+          >
+            Loader
+          </div>
+        </span>
+        <span>
+          src/index.ts
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`GenerateFiles Message Part Component renders with multiple completed files and one generating 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="cloud-upload-icon"
+      >
+        CloudUploadIcon
+      </div>
+      <span>
+        Generating files
+      </span>
+    </div>
+    <div
+      class="text-sm relative min-h-5"
+    >
+      <div
+        class="flex items-center"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+        <span
+          class="whitespace-pre-wrap"
+        >
+          src/index.ts
+        </span>
+      </div>
+      <div
+        class="flex items-center"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+        <span
+          class="whitespace-pre-wrap"
+        >
+          src/utils.ts
+        </span>
+      </div>
+      <div
+        class="flex"
+      >
+        <span
+          class="inline-flex items-center justify-center w-5 h-5 mr-1"
+        >
+          <div
+            data-testid="ai-loader"
+          >
+            Loader
+          </div>
+        </span>
+        <span>
+          src/types.ts
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`GenerateFiles Message Part Component renders with no files 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="cloud-upload-icon"
+      >
+        CloudUploadIcon
+      </div>
+      <span>
+        Uploaded files
+      </span>
+    </div>
+    <div
+      class="text-sm relative min-h-5"
+    />
+  </div>
+</div>
+`;
+
+exports[`GenerateFiles Message Part Component renders with special characters in file paths 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="cloud-upload-icon"
+      >
+        CloudUploadIcon
+      </div>
+      <span>
+        Uploaded files
+      </span>
+    </div>
+    <div
+      class="text-sm relative min-h-5"
+    >
+      <div
+        class="flex items-center"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+        <span
+          class="whitespace-pre-wrap"
+        >
+          src/[id]/page.tsx
+        </span>
+      </div>
+      <div
+        class="flex items-center"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+        <span
+          class="whitespace-pre-wrap"
+        >
+          src/components/my-component.tsx
+        </span>
+      </div>
+      <div
+        class="flex items-center"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+        <span
+          class="whitespace-pre-wrap"
+        >
+          src/utils/helper-functions.ts
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`GenerateFiles Message Part Component renders with uploaded status 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="cloud-upload-icon"
+      >
+        CloudUploadIcon
+      </div>
+      <span>
+        Generating files
+      </span>
+    </div>
+    <div
+      class="text-sm relative min-h-5"
+    >
+      <div
+        class="flex items-center"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+        <span
+          class="whitespace-pre-wrap"
+        >
+          src/index.ts
+        </span>
+      </div>
+      <div
+        class="flex items-center"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+        <span
+          class="whitespace-pre-wrap"
+        >
+          src/utils.ts
+        </span>
+      </div>
+      <div
+        class="flex items-center"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+        <span
+          class="whitespace-pre-wrap"
+        >
+          src/types.ts
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`GenerateFiles Message Part Component renders with uploading status 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="cloud-upload-icon"
+      >
+        CloudUploadIcon
+      </div>
+      <span>
+        Generating files
+      </span>
+    </div>
+    <div
+      class="text-sm relative min-h-5"
+    >
+      <div
+        class="flex items-center"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+        <span
+          class="whitespace-pre-wrap"
+        >
+          src/index.ts
+        </span>
+      </div>
+      <div
+        class="flex"
+      >
+        <span
+          class="inline-flex items-center justify-center w-5 h-5 mr-1"
+        >
+          <div
+            data-testid="ai-loader"
+          >
+            Loader
+          </div>
+        </span>
+        <span>
+          src/utils.ts
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

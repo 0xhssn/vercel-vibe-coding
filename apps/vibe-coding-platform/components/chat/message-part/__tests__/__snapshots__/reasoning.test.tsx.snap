@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reasoning Message Part Component renders reasoning with bold formatting 1`] = `
+<div>
+  <div
+    class="text-sm border border-border bg-background rounded-md cursor-pointer hover:bg-accent/30 transition-colors"
+  >
+    <div
+      class="px-3 py-2"
+    >
+      <div
+        class="text-secondary-foreground font-mono leading-normal"
+      >
+        <div
+          data-testid="markdown-renderer"
+        >
+          **Important**: This is a critical step
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Reasoning Message Part Component renders reasoning with default thinking text when empty 1`] = `
+<div>
+  <div
+    class="text-sm border border-border bg-background rounded-md cursor-pointer hover:bg-accent/30 transition-colors"
+  >
+    <div
+      class="px-3 py-2"
+    >
+      <div
+        class="text-secondary-foreground font-mono leading-normal"
+      >
+        <div
+          data-testid="markdown-renderer"
+        >
+          _Thinking_
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Reasoning Message Part Component renders reasoning with done state and text 1`] = `
+<div>
+  <div
+    class="text-sm border border-border bg-background rounded-md cursor-pointer hover:bg-accent/30 transition-colors"
+  >
+    <div
+      class="px-3 py-2"
+    >
+      <div
+        class="text-secondary-foreground font-mono leading-normal"
+      >
+        <div
+          data-testid="markdown-renderer"
+        >
+          Let me think about this step by step
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Reasoning Message Part Component renders reasoning with empty text and done state 1`] = `<div />`;
+
+exports[`Reasoning Message Part Component renders reasoning with long text 1`] = `
+<div>
+  <div
+    class="text-sm border border-border bg-background rounded-md cursor-pointer hover:bg-accent/30 transition-colors"
+  >
+    <div
+      class="px-3 py-2"
+    >
+      <div
+        class="text-secondary-foreground font-mono leading-normal"
+      >
+        <div
+          class="overflow-hidden"
+        >
+          This is a very long reasoning text that exceeds the normal length and should be truncated when not expanded. It contains multiple sentences and ideas that need to be processed.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Reasoning Message Part Component renders reasoning with multiline text 1`] = `
+<div>
+  <div
+    class="text-sm border border-border bg-background rounded-md cursor-pointer hover:bg-accent/30 transition-colors"
+  >
+    <div
+      class="px-3 py-2"
+    >
+      <div
+        class="text-secondary-foreground font-mono leading-normal"
+      >
+        <div
+          class="overflow-hidden"
+        >
+          First, I need to understand the problem.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Reasoning Message Part Component renders reasoning with short text 1`] = `
+<div>
+  <div
+    class="text-sm border border-border bg-background rounded-md cursor-pointer hover:bg-accent/30 transition-colors"
+  >
+    <div
+      class="px-3 py-2"
+    >
+      <div
+        class="text-secondary-foreground font-mono leading-normal"
+      >
+        <div
+          data-testid="markdown-renderer"
+        >
+          Quick thought
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Reasoning Message Part Component renders reasoning with streaming state 1`] = `
+<div>
+  <div
+    class="text-sm border border-border bg-background rounded-md cursor-pointer hover:bg-accent/30 transition-colors"
+  >
+    <div
+      class="px-3 py-2"
+    >
+      <div
+        class="text-secondary-foreground font-mono leading-normal"
+      >
+        <div
+          data-testid="markdown-renderer"
+        >
+          Processing...
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

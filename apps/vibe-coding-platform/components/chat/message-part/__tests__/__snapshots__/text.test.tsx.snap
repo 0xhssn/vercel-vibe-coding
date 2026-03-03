@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text Message Part Component renders code blocks in text 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border bg-secondary/90 text-secondary-foreground border-gray-300 rounded-md font-mono"
+  >
+    <div
+      data-testid="markdown-renderer"
+    >
+      Here is some code:
+
+\`\`\`javascript
+const x = 42;
+\`\`\`
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Text Message Part Component renders empty text 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border bg-secondary/90 text-secondary-foreground border-gray-300 rounded-md font-mono"
+  >
+    <div
+      data-testid="markdown-renderer"
+    />
+  </div>
+</div>
+`;
+
+exports[`Text Message Part Component renders markdown formatted text 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border bg-secondary/90 text-secondary-foreground border-gray-300 rounded-md font-mono"
+  >
+    <div
+      data-testid="markdown-renderer"
+    >
+      # Heading
+
+**Bold text** and *italic text*
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Text Message Part Component renders multiline text 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border bg-secondary/90 text-secondary-foreground border-gray-300 rounded-md font-mono"
+  >
+    <div
+      data-testid="markdown-renderer"
+    >
+      Line 1
+Line 2
+Line 3
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Text Message Part Component renders simple text content 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border bg-secondary/90 text-secondary-foreground border-gray-300 rounded-md font-mono"
+  >
+    <div
+      data-testid="markdown-renderer"
+    >
+      Hello, world!
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Text Message Part Component renders text with links 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border bg-secondary/90 text-secondary-foreground border-gray-300 rounded-md font-mono"
+  >
+    <div
+      data-testid="markdown-renderer"
+    >
+      Check out [this link](https://example.com)
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Text Message Part Component renders text with lists 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border bg-secondary/90 text-secondary-foreground border-gray-300 rounded-md font-mono"
+  >
+    <div
+      data-testid="markdown-renderer"
+    >
+      - Item 1
+- Item 2
+- Item 3
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Text Message Part Component renders text with special characters 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border bg-secondary/90 text-secondary-foreground border-gray-300 rounded-md font-mono"
+  >
+    <div
+      data-testid="markdown-renderer"
+    >
+      Special chars: &lt;&gt;&"'
+    </div>
+  </div>
+</div>
+`;

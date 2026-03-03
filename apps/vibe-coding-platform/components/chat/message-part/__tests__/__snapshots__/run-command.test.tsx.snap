@@ -1,0 +1,371 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RunCommand Message Part Component renders command with commandId 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="square-chevron-right-icon"
+      >
+        SquareChevronRightIcon
+      </div>
+      Finished
+    </div>
+    <div
+      class="relative pl-6"
+    >
+      <span
+        class="inline-flex items-center justify-center w-5 h-5 absolute left-0 top-0"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+      </span>
+      <div
+        data-testid="react-markdown"
+      >
+        \`npm install\`
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RunCommand Message Part Component renders command with done status and error exit code 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="square-chevron-right-icon"
+      >
+        SquareChevronRightIcon
+      </div>
+      Errored
+    </div>
+    <div
+      class="relative pl-6"
+    >
+      <span
+        class="inline-flex items-center justify-center w-5 h-5 absolute left-0 top-0"
+      >
+        <div
+          data-testid="x-icon"
+        >
+          XIcon
+        </div>
+      </span>
+      <div
+        data-testid="react-markdown"
+      >
+        \`npm test\`
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RunCommand Message Part Component renders command with done status and success exit code 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="square-chevron-right-icon"
+      >
+        SquareChevronRightIcon
+      </div>
+      Finished
+    </div>
+    <div
+      class="relative pl-6"
+    >
+      <span
+        class="inline-flex items-center justify-center w-5 h-5 absolute left-0 top-0"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+      </span>
+      <div
+        data-testid="react-markdown"
+      >
+        \`npm test\`
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RunCommand Message Part Component renders command with error object 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="square-chevron-right-icon"
+      >
+        SquareChevronRightIcon
+      </div>
+      Errored
+    </div>
+    <div
+      class="relative pl-6"
+    >
+      <span
+        class="inline-flex items-center justify-center w-5 h-5 absolute left-0 top-0"
+      >
+        <div
+          data-testid="x-icon"
+        >
+          XIcon
+        </div>
+      </span>
+      <div
+        data-testid="react-markdown"
+      >
+        \`npm install\`
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RunCommand Message Part Component renders command with error status 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="square-chevron-right-icon"
+      >
+        SquareChevronRightIcon
+      </div>
+      Errored
+    </div>
+    <div
+      class="relative pl-6"
+    >
+      <span
+        class="inline-flex items-center justify-center w-5 h-5 absolute left-0 top-0"
+      >
+        <div
+          data-testid="x-icon"
+        >
+          XIcon
+        </div>
+      </span>
+      <div
+        data-testid="react-markdown"
+      >
+        \`npm invalid\`
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RunCommand Message Part Component renders command with executing status 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="square-chevron-right-icon"
+      >
+        SquareChevronRightIcon
+      </div>
+      Executing
+    </div>
+    <div
+      class="relative pl-6"
+    >
+      <span
+        class="inline-flex items-center justify-center w-5 h-5 absolute left-0 top-0"
+      >
+        <div
+          data-testid="ai-loader"
+        >
+          Loader
+        </div>
+      </span>
+      <div
+        data-testid="react-markdown"
+      >
+        \`npm install\`
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RunCommand Message Part Component renders command with multiple arguments 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="square-chevron-right-icon"
+      >
+        SquareChevronRightIcon
+      </div>
+      Finished
+    </div>
+    <div
+      class="relative pl-6"
+    >
+      <span
+        class="inline-flex items-center justify-center w-5 h-5 absolute left-0 top-0"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+      </span>
+      <div
+        data-testid="react-markdown"
+      >
+        \`docker run -it --rm ubuntu:latest bash\`
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RunCommand Message Part Component renders command with no arguments 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="square-chevron-right-icon"
+      >
+        SquareChevronRightIcon
+      </div>
+      Finished
+    </div>
+    <div
+      class="relative pl-6"
+    >
+      <span
+        class="inline-flex items-center justify-center w-5 h-5 absolute left-0 top-0"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+      </span>
+      <div
+        data-testid="react-markdown"
+      >
+        \`ls \`
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RunCommand Message Part Component renders command with running status 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="square-chevron-right-icon"
+      >
+        SquareChevronRightIcon
+      </div>
+      Running in background
+    </div>
+    <div
+      class="relative pl-6"
+    >
+      <span
+        class="inline-flex items-center justify-center w-5 h-5 absolute left-0 top-0"
+      >
+        <div
+          data-testid="check-icon"
+        >
+          CheckIcon
+        </div>
+      </span>
+      <div
+        data-testid="react-markdown"
+      >
+        \`npm start\`
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RunCommand Message Part Component renders command with waiting status 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="square-chevron-right-icon"
+      >
+        SquareChevronRightIcon
+      </div>
+      Waiting
+    </div>
+    <div
+      class="relative pl-6"
+    >
+      <span
+        class="inline-flex items-center justify-center w-5 h-5 absolute left-0 top-0"
+      >
+        <div
+          data-testid="ai-loader"
+        >
+          Loader
+        </div>
+      </span>
+      <div
+        data-testid="react-markdown"
+      >
+        \`npm run build\`
+      </div>
+    </div>
+  </div>
+</div>
+`;

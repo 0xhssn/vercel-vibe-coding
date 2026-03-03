@@ -1,0 +1,312 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReportErrors Message Part Component renders with code block in summary 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="bug-icon"
+      >
+        BugIcon
+      </div>
+      <span>
+        Auto-detected errors
+      </span>
+    </div>
+    <div
+      class="relative min-h-5"
+    >
+      <div
+        data-testid="react-markdown"
+      >
+        Error in function:
+
+\`\`\`typescript
+function test() {
+  return undefined.property;
+}
+\`\`\`
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReportErrors Message Part Component renders with empty paths array 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="bug-icon"
+      >
+        BugIcon
+      </div>
+      <span>
+        Auto-detected errors
+      </span>
+    </div>
+    <div
+      class="relative min-h-5"
+    >
+      <div
+        data-testid="react-markdown"
+      >
+        General error occurred
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReportErrors Message Part Component renders with error summary and file paths 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="bug-icon"
+      >
+        BugIcon
+      </div>
+      <span>
+        Auto-detected errors
+      </span>
+    </div>
+    <div
+      class="relative min-h-5"
+    >
+      <div
+        data-testid="react-markdown"
+      >
+        Type errors found in the following files:
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReportErrors Message Part Component renders with long error summary 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="bug-icon"
+      >
+        BugIcon
+      </div>
+      <span>
+        Auto-detected errors
+      </span>
+    </div>
+    <div
+      class="relative min-h-5"
+    >
+      <div
+        data-testid="react-markdown"
+      >
+        This is a very long error message that contains detailed information about what went wrong. It includes multiple lines of explanation and context about the error that occurred during the build process. The error is critical and needs to be fixed before proceeding.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReportErrors Message Part Component renders with markdown formatted summary 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="bug-icon"
+      >
+        BugIcon
+      </div>
+      <span>
+        Auto-detected errors
+      </span>
+    </div>
+    <div
+      class="relative min-h-5"
+    >
+      <div
+        data-testid="react-markdown"
+      >
+        **Error**: Failed to compile
+
+Details: Missing dependency
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReportErrors Message Part Component renders with multiline error summary 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="bug-icon"
+      >
+        BugIcon
+      </div>
+      <span>
+        Auto-detected errors
+      </span>
+    </div>
+    <div
+      class="relative min-h-5"
+    >
+      <div
+        data-testid="react-markdown"
+      >
+        Multiple errors detected:
+1. Syntax error on line 42
+2. Undefined variable on line 56
+3. Type mismatch on line 78
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReportErrors Message Part Component renders with multiple file paths 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="bug-icon"
+      >
+        BugIcon
+      </div>
+      <span>
+        Auto-detected errors
+      </span>
+    </div>
+    <div
+      class="relative min-h-5"
+    >
+      <div
+        data-testid="react-markdown"
+      >
+        Errors found in:
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReportErrors Message Part Component renders with nested paths 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="bug-icon"
+      >
+        BugIcon
+      </div>
+      <span>
+        Auto-detected errors
+      </span>
+    </div>
+    <div
+      class="relative min-h-5"
+    >
+      <div
+        data-testid="react-markdown"
+      >
+        Errors in nested directories:
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReportErrors Message Part Component renders with simple error summary 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="bug-icon"
+      >
+        BugIcon
+      </div>
+      <span>
+        Auto-detected errors
+      </span>
+    </div>
+    <div
+      class="relative min-h-5"
+    >
+      <div
+        data-testid="react-markdown"
+      >
+        An error occurred during execution
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReportErrors Message Part Component renders with special characters in summary 1`] = `
+<div>
+  <div
+    class="text-sm px-3.5 py-3 border border-border bg-background rounded-md font-mono"
+  >
+    <div
+      class="flex items-center gap-1 text-muted-foreground mb-1 font-semibold"
+    >
+      <div
+        data-testid="bug-icon"
+      >
+        BugIcon
+      </div>
+      <span>
+        Auto-detected errors
+      </span>
+    </div>
+    <div
+      class="relative min-h-5"
+    >
+      <div
+        data-testid="react-markdown"
+      >
+        Error: Expected ";" but got "}"
+      </div>
+    </div>
+  </div>
+</div>
+`;
