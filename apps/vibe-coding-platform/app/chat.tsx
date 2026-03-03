@@ -11,6 +11,7 @@ import {
 } from '@/components/ai-elements/conversation'
 import { Input } from '@/components/ui/input'
 import { Message } from '@/components/chat/message'
+import { MessageSkeleton } from '@/components/chat/message-skeleton'
 import { ModelSelector } from '@/components/settings/model-selector'
 import { Panel, PanelHeader } from '@/components/panels/panels'
 import { Settings } from '@/components/settings/settings'
@@ -40,7 +41,7 @@ export function Chat({ className }: Props) {
         setInput('')
       }
     },
-    [sendMessage, modelId, setInput, reasoningEffort]
+    [sendMessage, modelId, setInput, reasoningEffort],
   )
 
   useEffect(() => {
@@ -83,6 +84,9 @@ export function Chat({ className }: Props) {
             {messages.map((message) => (
               <Message key={message.id} message={message} />
             ))}
+            {(status === 'streaming' || status === 'submitted') && (
+              <MessageSkeleton />
+            )}
           </ConversationContent>
           <ConversationScrollButton />
         </Conversation>
@@ -105,7 +109,7 @@ export function Chat({ className }: Props) {
           value={input}
         />
         <Button type="submit" disabled={status !== 'ready' || !input.trim()}>
-        <SendIcon className="w-4 h-4" />
+          <SendIcon className="w-4 h-4" />
         </Button>
       </form>
     </Panel>
