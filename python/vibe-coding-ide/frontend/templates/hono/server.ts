@@ -4,7 +4,23 @@ import { cors } from 'hono/cors'
 
 const app = new Hono()
 
-app.use('*', cors())
+// Secure CORS configuration - only allow specific origins
+const ALLOWED_ORIGINS = [
+  'http://localhost:3000',
+  'http://localhost:3001',
+  'http://127.0.0.1:3000',
+  'http://127.0.0.1:3001',
+  process.env.FRONTEND_URL,
+].filter(Boolean) as string[]
+
+app.use('*', cors({
+  origin: (origin) => {
+    return ALLOWED_ORIGINS.includes(origin) ? origin : null
+  },
+  allowMethods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
+  allowHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+}))
 
 app.get('/api/health', (c) => c.json({ status: 'ok', service: 'hono' }))
 app.get('/api/ping', (c) => c.json({ message: 'pong' }))

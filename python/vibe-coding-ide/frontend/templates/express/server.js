@@ -4,11 +4,26 @@ import morgan from 'morgan';
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Enable CORS for cross-origin requests
+// Secure CORS configuration - only allow specific origins
+const ALLOWED_ORIGINS = [
+  'http://localhost:3000',
+  'http://localhost:3001',
+  'http://127.0.0.1:3000',
+  'http://127.0.0.1:3001',
+  process.env.FRONTEND_URL,
+].filter(Boolean);
+
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  const origin = req.headers.origin;
+  
+  // Only set CORS headers if origin is in allowed list
+  if (origin && ALLOWED_ORIGINS.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  }
+  
   if (req.method === 'OPTIONS') return res.sendStatus(200);
   next();
 });

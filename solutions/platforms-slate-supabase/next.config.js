@@ -8,4 +8,27 @@ module.exports = {
       'avatars.githubusercontent.com',
     ],
   },
+
+  async headers() {
+    return [
+      {
+        source: '/api/:path*',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET, POST, PUT, DELETE, OPTIONS',
+          },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value: 'Content-Type, Authorization, X-Requested-With',
+          },
+          {
+            key: 'Access-Control-Max-Age',
+            value: '86400',
+          },
+          // Note: Access-Control-Allow-Origin is set dynamically in middleware
+        ],
+      },
+    ]
+  },
 }
