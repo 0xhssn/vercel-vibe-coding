@@ -1,5 +1,23 @@
 import { NextResponse } from "next/server";
 
+// CORS Configuration
+const ALLOWED_ORIGINS = [
+  process.env.NEXT_PUBLIC_APP_URL,
+  process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined,
+  ...(process.env.NODE_ENV === "development"
+    ? [
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "http://127.0.0.1:3000",
+      ]
+    : []),
+].filter(Boolean);
+
+function isOriginAllowed(origin) {
+  if (!origin) return false;
+  return ALLOWED_ORIGINS.includes(origin);
+}
+
 export const config = {
   matcher: [
     "/",
@@ -11,8 +29,41 @@ export const config = {
   ],
 };
 
-export default function middleware(req) {
+export default async function middleware(req) {
+  const origin = req.headers.get("origin");
+  const pathname = req.nextUrl.pathname;
   const url = req.nextUrl;
+
+  // CORS handling for API routes
+  if (pathname.startsWith("/api/")) {
+    // Handle preflight requests
+    if (req.method === "OPTIONS") {
+      if (!isOriginAllowed(origin)) {
+        return new NextResponse(null, { status: 403 });
+      }
+
+      return new NextResponse(null, {
+        status: 204,
+        headers: {
+          "Access-Control-Allow-Origin": origin,
+          "Access-Control-Allow-Credentials": "true",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With",
+          "Access-Control-Max-Age": "86400",
+        },
+      });
+    }
+
+    // For regular API requests, validate origin and add CORS headers
+    const response = NextResponse.next();
+
+    if (isOriginAllowed(origin)) {
+      response.headers.set("Access-Control-Allow-Origin", origin);
+      response.headers.set("Access-Control-Allow-Credentials", "true");
+    }
+
+    return response;
+  }
 
   // Get hostname of request (e.g. demo.vercel.pub, demo.localhost:3000)
   const hostname = req.headers.get("host") || "demo.vercel.pub";
